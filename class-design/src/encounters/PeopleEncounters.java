@@ -1,6 +1,8 @@
-import java.time.LocalDateTime;
+package encounters;
 
-public class Main
+import flights.FlightSchedule;
+
+public class PeopleEncounters
 {
     public static void main(String[] args)
     {
@@ -25,11 +27,5 @@ public class Main
         System.out.println("I encountered " +
                 celina.name + " " + celina.encounters +
                 " times!");
-
-        //instantiating a class
-        FlightSchedule schedule = new FlightSchedule();
-        schedule.number = "ALA 212";
-        schedule.departure = LocalDateTime.now();
-        schedule.length = 2;
     }
 }

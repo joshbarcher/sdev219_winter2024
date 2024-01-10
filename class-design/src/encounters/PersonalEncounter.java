@@ -1,3 +1,4 @@
+package encounters;
 
 //class names use PascalCase by convention
 //this class represents an encounter with a person
