@@ -7,6 +7,18 @@ public class CellPhone
     private String chargingPort;
     private double storageInGigs;
 
+    //example: method overloading
+    public CellPhone()
+    {
+        this("IPhone", 0, "usb-c", 128);
+    }
+
+    public CellPhone(String brand)
+    {
+        //this calls the constructor below
+        this(brand, 0, "usb-c", 128);
+    }
+
     public CellPhone(String brand, int volume,
                      String chargingPort, double storageInGigs)
     {
@@ -18,7 +30,7 @@ public class CellPhone
 
     public String getBrand()
     {
-        return brand;
+        return brand.toUpperCase();
     }
 
     public int getVolume()
@@ -69,6 +81,8 @@ public class CellPhone
     //this converts the object to a string (and returns the string)
     public String toString()
     {
-        return "CellPhone - " + brand;
+        return "CellPhone - " + brand + " (" +
+                storageInGigs + " gigs) (" +
+                volume + " volume)";
     }
 }
