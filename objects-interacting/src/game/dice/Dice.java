@@ -1,7 +1,9 @@
-package game;
+package game.dice;
 
 import java.util.Random;
 
+//every class (except for one) has a parent class
+//Rule: If a class doesn't declare a parent, then Object is the parent
 public class Dice
 {
     private int sides;
@@ -53,8 +55,9 @@ public class Dice
         return value;
     }
 
-    public String toString()
-    {
-        return "A " + sides + " sided dice";
-    }
+    //this redefines toString() from the ??? (parent) class
+//    public String toString()
+//    {
+//        return "A " + sides + " sided dice";
+//    }
 }

@@ -1,5 +1,7 @@
 package game;
 
+import game.dice.Dice;
+
 public class Player
 {
     private String name;
@@ -11,14 +13,27 @@ public class Player
         this.die = die;
     }
 
-    public void rollTenTimes()
+    //we want to follow the DRY (don't repeat yourself) principle
+    public int rollTimes(int times)
     {
-        for (int i = 1; i <= 10; i++)
+        int score = 0;
+        System.out.print(name + " rolled a ");
+        for (int i = 1; i <= times; i++)
         {
             die.roll();
-            System.out.println(name + " rolled a " + die.getValue());
+            System.out.print(die.getValue() + ", ");
+            score += die.getValue();
         }
         System.out.println();
+        System.out.println("Final score: " + score);
+        System.out.println();
+
+        return score;
+    }
+
+    public int rollTenTimes()
+    {
+        return rollTimes(10);
     }
 
     public String getName()
