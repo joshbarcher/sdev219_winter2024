@@ -17,8 +17,8 @@ public class ColorDice extends Dice
     }
 
     //this redefines toString() from the Dice (parent) class
-//    public String toString()
-//    {
-//        return "A " + color  + " " + getSides() + " sided dice";
-//    }
+    public String toString()
+    {
+        return "A " + color  + " " + getSides() + " sided dice";
+    }
 }

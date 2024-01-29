@@ -55,9 +55,14 @@ public class Dice
         return value;
     }
 
+    public void setValue(int value)
+    {
+        this.value = value;
+    }
+
     //this redefines toString() from the ??? (parent) class
-//    public String toString()
-//    {
-//        return "A " + sides + " sided dice";
-//    }
+    public String toString()
+    {
+        return "A " + sides + " sided dice";
+    }
 }
