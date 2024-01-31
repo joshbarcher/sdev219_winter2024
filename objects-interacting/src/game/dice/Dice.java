@@ -1,5 +1,7 @@
 package game.dice;
 
+import game.enums.DiceTypes;
+
 import java.util.Random;
 
 //every class (except for one) has a parent class
@@ -37,6 +39,18 @@ public class Dice
         }
 
         value = 1;
+    }
+
+    public Dice(DiceTypes type)
+    {
+        //compare the enum value passed into the constructor
+        //against other enum values
+        if (type == DiceTypes.FOUR){ sides = 4; }
+        else if (type == DiceTypes.SIX) { sides = 6; }
+        else if (type == DiceTypes.EIGHT) { sides = 8; }
+        else if (type == DiceTypes.TEN) { sides = 10; }
+        else if (type == DiceTypes.TWELVE) { sides = 12; }
+        else if (type == DiceTypes.TWENTY) { sides = 20; }
     }
 
     public void roll()

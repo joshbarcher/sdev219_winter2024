@@ -5,6 +5,7 @@ import game.dice.Dice;
 import game.Player;
 import game.dice.FixedDice;
 import game.dice.WeightedDice;
+import game.enums.DiceTypes;
 
 public class Main
 {
@@ -12,8 +13,8 @@ public class Main
     {
         final int DICE_SIDES = 10;
 
-        ColorDice p1Dice = new ColorDice("Red", DICE_SIDES);
-        ColorDice p2Dice = new WeightedDice("Blue", DICE_SIDES);
+        Dice p1Dice = new Dice(DiceTypes.SIX);
+        Dice p2Dice = new Dice(DiceTypes.TEN);
         Player p1 = new Player("Job", p1Dice);
         Player p2 = new Player("Rose", p2Dice);
 

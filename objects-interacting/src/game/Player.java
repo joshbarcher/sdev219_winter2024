@@ -41,6 +41,11 @@ public class Player
         return name;
     }
 
+    public Dice getDie()
+    {
+        return die;
+    }
+
     public String toString()
     {
         return name + " has " + die.toString();
