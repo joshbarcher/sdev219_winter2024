@@ -11,6 +11,9 @@ public class Dice
     private int sides;
     private int value; //the side of the dice that is "up"
 
+    //shared among all Dice objects
+    private static int numDiceCreated;
+
     public Dice(int sides)
     {
         //traditional "table-top" sides are - 4, 6, 8, 10, 12, 20
@@ -39,6 +42,7 @@ public class Dice
         }
 
         value = 1;
+        numDiceCreated++;
     }
 
     public Dice(DiceTypes type)
@@ -51,6 +55,8 @@ public class Dice
         else if (type == DiceTypes.TEN) { sides = 10; }
         else if (type == DiceTypes.TWELVE) { sides = 12; }
         else if (type == DiceTypes.TWENTY) { sides = 20; }
+
+        numDiceCreated++;
     }
 
     public void roll()
@@ -67,6 +73,12 @@ public class Dice
     public int getValue()
     {
         return value;
+    }
+
+    //getter for our static field
+    public static int getNumDiceCreated()
+    {
+        return numDiceCreated;
     }
 
     public void setValue(int value)

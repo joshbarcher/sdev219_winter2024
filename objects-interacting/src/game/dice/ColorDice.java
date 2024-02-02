@@ -1,5 +1,8 @@
 package game.dice;
 
+import game.enums.Colors;
+import game.enums.DiceTypes;
+
 public class ColorDice extends Dice
 {
     private String color;
@@ -9,6 +12,13 @@ public class ColorDice extends Dice
         super(sides);
 
         this.color = color;
+    }
+
+    public ColorDice(Colors color, DiceTypes type)
+    {
+        super(type);
+
+        this.color = color.name().toLowerCase();
     }
 
     public String getColor()
