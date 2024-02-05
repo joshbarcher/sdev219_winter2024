@@ -3,7 +3,9 @@ package game.dice;
 import game.enums.Colors;
 import game.enums.DiceTypes;
 
-public class ColorDice extends Dice
+import java.util.Random;
+
+public abstract class ColorDice extends Dice
 {
     private String color;
 

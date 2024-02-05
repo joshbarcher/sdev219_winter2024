@@ -1,8 +1,7 @@
 package driver;
 
-import game.dice.ColorDice;
+import game.dice.*;
 import game.Player;
-import game.dice.Dice;
 import game.enums.Colors;
 import game.enums.DiceTypes;
 import game.enums.GameType;
@@ -13,12 +12,23 @@ public class Main
 {
     public static void main(String[] args)
     {
-        final int DICE_SIDES = 10;
-        final GameType GAME_TYPE = GameType.TARGET_NUMBER;
+        //a static method is called on a class
+        //Main.main(new String[0]);
 
-        ColorDice p1Dice = new ColorDice(Colors.GREEN, DiceTypes.TEN);
-        ColorDice p2Dice = new ColorDice(Colors.ORANGE, DiceTypes.TEN);
-        Dice anotherDice = new Dice(10);
+        //an instance (non-static) method is called on a object
+        Main myProgram = new Main();
+        myProgram.gameIntro();
+    }
+
+    public void gameIntro()
+    {
+        final int DICE_SIDES = 10;
+        final GameType GAME_TYPE = GameType.HIGH_SCORE;
+
+        //upcasting
+        Dice p1Dice = new FairDice("Blue", 10);
+        Dice p2Dice = new WeightedDice("Orange", 10);
+        Dice anotherDice = new FixedDice("red", 10);
 
         //calling a method using the class name is referred to as
         //"calling a method statically"
@@ -50,7 +60,7 @@ public class Main
         }
     }
 
-    public static void playTargetNumber(Player p1, Player p2)
+    public void playTargetNumber(Player p1, Player p2)
     {
         //pick our target number
         p1.getDie().roll();
@@ -90,7 +100,7 @@ public class Main
         }
     }
 
-    public static void playHighScore(Player p1, Player p2)
+    public void playHighScore(Player p1, Player p2)
     {
         final int MATCH_ROLLS = 10;
 

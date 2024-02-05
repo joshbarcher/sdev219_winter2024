@@ -4,9 +4,7 @@ import game.enums.DiceTypes;
 
 import java.util.Random;
 
-//every class (except for one) has a parent class
-//Rule: If a class doesn't declare a parent, then Object is the parent
-public class Dice
+public abstract class Dice
 {
     private int sides;
     private int value; //the side of the dice that is "up"
@@ -59,11 +57,7 @@ public class Dice
         numDiceCreated++;
     }
 
-    public void roll()
-    {
-        Random random = new Random();
-        value = random.nextInt(sides) + 1;
-    }
+    public abstract void roll();
 
     public int getSides()
     {
@@ -89,6 +83,6 @@ public class Dice
     //this redefines toString() from the ??? (parent) class
     public String toString()
     {
-        return "A " + sides + " sided dice";
+        return "A " + sides + " sided dice (" + value + " side up)";
     }
 }

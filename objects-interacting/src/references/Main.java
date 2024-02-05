@@ -19,7 +19,7 @@ public class Main
         System.out.println("num2 is " + num2);
 
         //objects copy references (aka pointers)
-        Dice dice1 = new ColorDice("Blue", 6);
+        /*Dice dice1 = new ColorDice("Blue", 6);
         Dice dice2 = new ColorDice("Orange", 6);
 
         Player p1 = new Player("Alex", dice1);
@@ -31,7 +31,7 @@ public class Main
         //roll the dice and inspect both players dice sides
         rollDice(p1.getDie());
         System.out.println(p1.getDie().getValue());
-        System.out.println(p2.getDie().getValue());
+        System.out.println(p2.getDie().getValue());*/
     }
 
     public static void rollDice(Dice die)
