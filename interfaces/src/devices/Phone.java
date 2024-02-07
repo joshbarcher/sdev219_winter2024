@@ -3,13 +3,14 @@ package devices;
 import interfaces.CaptureDevice;
 import interfaces.Noisy;
 
-public class Phone implements Noisy, CaptureDevice
+public class Phone extends Computer implements Noisy, CaptureDevice
 {
     private String brand;
     private int currentVolume = 5;
 
     public Phone(String brand)
     {
+        super();
         this.brand = brand;
     }
 
