@@ -1,9 +1,12 @@
 package driver;
 
+import objects.Wallet;
 import pets.Animal;
 import pets.Cat;
 import pets.Dog;
 import pets.Lizard;
+
+import java.util.ArrayList;
 
 public class PetProgram
 {
@@ -20,5 +23,21 @@ public class PetProgram
         {
             animals[i].petAnimal();
         }
+
+        ArrayList list = new ArrayList();
+        Wallet wallet = new Wallet();
+
+        printSomething(laz);
+        printSomething(bella);
+        printSomething("Hello");
+        printSomething(list);
+        printSomething(10);
+        printSomething(true);
+        printSomething(wallet);
+    }
+
+    public static void printSomething(Object object)
+    {
+        System.out.println(object.toString());
     }
 }
