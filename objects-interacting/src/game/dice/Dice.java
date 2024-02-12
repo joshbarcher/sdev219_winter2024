@@ -4,6 +4,15 @@ import game.enums.DiceTypes;
 
 import java.util.Random;
 
+/**
+ * This represents dice objects with sides of
+ * 4, 6, 8, 10, 12, 20. You cannot instantiate
+ * a die directly.
+ *
+ * @author Josh Archer
+ * @author My SDEV 219 class
+ * @version https://github.com/joshbarcher/sdev219_winter2024
+ */
 public abstract class Dice
 {
     private int sides;

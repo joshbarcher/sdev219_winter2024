@@ -12,6 +12,7 @@ public class FairDice extends ColorDice
     public void roll()
     {
         Random random = new Random();
-        setValue(random.nextInt(getSides()) + 1);
+        int roll = random.nextInt(getSides()) + 1;
+        setValue(roll);
     }
 }
