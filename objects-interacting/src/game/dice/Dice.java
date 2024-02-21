@@ -21,6 +21,13 @@ public abstract class Dice
     //shared among all Dice objects
     private static int numDiceCreated;
 
+    /**
+     * This creates a new Dice object with the sides that
+     * are provided by the parameter.
+     *
+     * @param sides the number of sides on the dice - must be one of
+     *              [4, 6, 8, 10, 12, 20]
+     */
     public Dice(int sides)
     {
         //traditional "table-top" sides are - 4, 6, 8, 10, 12, 20
@@ -43,53 +50,100 @@ public abstract class Dice
         }
         else
         {
-            //just assign a default
-            System.out.println("Invalid dice side, defaulting to six");
-            this.sides = 6;
+            throw new RuntimeException("A dice with " + sides +
+                    " sides is not supported");
         }
 
         value = 1;
         numDiceCreated++;
     }
 
+    /**
+     * Creates a dice with the specified type.
+     *
+     * @param type the number of sides for the dice, using the DiceTypes enum
+     */
     public Dice(DiceTypes type)
     {
         //compare the enum value passed into the constructor
         //against other enum values
-        if (type == DiceTypes.FOUR){ sides = 4; }
-        else if (type == DiceTypes.SIX) { sides = 6; }
-        else if (type == DiceTypes.EIGHT) { sides = 8; }
-        else if (type == DiceTypes.TEN) { sides = 10; }
-        else if (type == DiceTypes.TWELVE) { sides = 12; }
-        else if (type == DiceTypes.TWENTY) { sides = 20; }
-
+        if (type == DiceTypes.FOUR)
+        {
+            sides = 4;
+        } else if (type == DiceTypes.SIX)
+        {
+            sides = 6;
+        } else if (type == DiceTypes.EIGHT)
+        {
+            sides = 8;
+        } else if (type == DiceTypes.TEN)
+        {
+            sides = 10;
+        } else if (type == DiceTypes.TWELVE)
+        {
+            sides = 12;
+        } else if (type == DiceTypes.TWENTY)
+        {
+            sides = 20;
+        } else
+        {
+            throw new RuntimeException("Dice type not recognized - " + type);
+        }
         numDiceCreated++;
     }
 
+    /**
+     * This should randomly pick a side of the die.
+     */
     public abstract void roll();
 
+    /**
+     * A getter for the sides field.
+     *
+     * @return the number of sides on the dice
+     */
     public int getSides()
     {
         return sides;
     }
 
+    /**
+     * A getter for the value field.
+     *
+     * @return the current side of the dice that is "up"
+     */
     public int getValue()
     {
         return value;
     }
 
-    //getter for our static field
+    /**
+     * A getter for the number of dice created with this class.
+     * @return the number of dice created
+     */
     public static int getNumDiceCreated()
     {
         return numDiceCreated;
     }
 
+    /**
+     * This assigns the value field, changing one side of the dice
+     * to be in the "up" state
+     * @param value the side of the dice that is "up"
+     */
     public void setValue(int value)
     {
+        if (value < 1 && value > sides)
+        {
+            throw new RuntimeException("Invalid dice value - " + value);
+        }
         this.value = value;
     }
 
-    //this redefines toString() from the ??? (parent) class
+    /**
+     * This gives a string representation of the dice.
+     * @return a string representation of the dice
+     */
     public String toString()
     {
         return "A " + sides + " sided dice (" + value + " side up)";

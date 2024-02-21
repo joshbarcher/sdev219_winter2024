@@ -1,7 +1,13 @@
 package game.enums;
 
-public enum Colors
-{
+/**
+ * This enum represents various colors.
+ *
+ * @version 1.0
+ * @author Josh Archer
+ * @author "SDEV 219 class"
+ */
+public enum Colors {
     RED,
     BLUE,
     ORANGE,

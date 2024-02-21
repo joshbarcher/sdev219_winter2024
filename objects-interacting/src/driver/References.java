@@ -1,13 +1,22 @@
-package references;
+package driver;
 
-import game.Player;
-import game.dice.ColorDice;
 import game.dice.Dice;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
+ /**
+  * This class tests out different types of object references.
+  *
+  * @version 1.0
+  * @author Josh Archer
+  * @author "SDEV 219 class"
+ */
+public class References {
+
+    /**
+     * The main method to start the program.
+     *
+     * @param args The command-line arguments.
+     */
+    public static void main(String[] args) {
         //primitives copy values
         int num1 = 10;
         int num2 = num1;
@@ -34,13 +43,22 @@ public class Main
         System.out.println(p2.getDie().getValue());*/
     }
 
-    public static void rollDice(Dice die)
-    {
+    /**
+     * Simulates rolling a dice.
+     *
+     * @param die The dice to roll.
+     */
+    public static void rollDice(Dice die) {
         die.roll();
     }
 
-    public static int addTo(int number)
-    {
+    /**
+     * Adds a value to a number.
+     *
+     * @param number The number to which to add the value.
+     * @return The result of adding the value to the number.
+     */
+    public static int addTo(int number) {
         number += 30;
         return number;
     }
