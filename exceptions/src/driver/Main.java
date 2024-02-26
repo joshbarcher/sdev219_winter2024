@@ -1,5 +1,6 @@
 package driver;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main
@@ -20,7 +21,12 @@ public class Main
                 System.out.println(username + " - " + password + " - " + age);
                 errors = false; //exit the loop
             }
-            catch (RuntimeException ex)
+            catch (InputMismatchException ex) //specific catch
+            {
+                System.out.println("Please enter a valid integer");
+                errors = true;
+            }
+            catch (Exception ex) //catch all
             {
                 System.out.println(ex.getMessage());
                 System.out.println("Please enter valid username and password");
@@ -41,7 +47,8 @@ public class Main
         //validate the value
         if (result < minValue || result > maxValue)
         {
-            throw new RuntimeException("Invalid user input");
+            throw new RuntimeException("Number should be in [" + minValue + ", " +
+                    maxValue + "]");
         }
 
         return result;
@@ -58,7 +65,8 @@ public class Main
         //validate the value
         if (result.length() < minChars || result.length() > maxChars)
         {
-            throw new IllegalStateException("Invalid user input");
+            throw new IllegalStateException("String should be of length [" +
+                    minChars + ", " + maxChars + "]");
         }
 
         return result;

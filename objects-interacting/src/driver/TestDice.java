@@ -19,7 +19,7 @@ public class TestDice {
      * @param args The command-line arguments.
      */
     public static void main(String[] args) {
-        Dice die1 = new FairDice("Red", 10);
+        Dice die1 = new FairDice("Red", 7);
         Dice die2 = new FairDice("Orange", 4);
 
         die1.roll();

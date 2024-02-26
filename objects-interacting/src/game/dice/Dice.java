@@ -50,7 +50,7 @@ public abstract class Dice
         }
         else
         {
-            throw new RuntimeException("A dice with " + sides +
+            throw new InvalidDiceException("A dice with " + sides +
                     " sides is not supported");
         }
 
