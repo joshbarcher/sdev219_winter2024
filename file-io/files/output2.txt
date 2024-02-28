@@ -1,0 +1,107 @@
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
+Hello
+class
+!
+100
+3.1234234
+Point{x=1.2, y=3.6}
