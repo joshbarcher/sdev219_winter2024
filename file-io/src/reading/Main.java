@@ -9,24 +9,63 @@ public class Main
     public static void main(String[] args)
     {
         //try-with-resources (close our resources automatically)
-        try (Scanner reader = new Scanner(new FileInputStream("files/books/alice.txt")))
+        try (Scanner reader = new Scanner(new FileInputStream(
+                "files/books/moby-dick.txt")))
         {
             //while the scanner can read another line of text from the file
             int lineCount = 0;
+            int aliceCounter = 0;
             while (reader.hasNextLine())
             {
                 String line = reader.nextLine();
                 lineCount++; //read another line
 
                 //how many times does the name "Alice" show up in the file
-                if (line.contains("Alice"))
+                String[] words = line.split(" ");
+
+                //how many elements are in the words array?
+                int aliceOnCurrentLine = 0;
+                for (int i = 0; i < words.length; i++)
                 {
-                    System.out.println("Line #" + lineCount + " contains the word 'Alice'");
+                    String singleWord = words[i];
+
+                    //try to convert a word to a number (if possible)
+                    try
+                    {
+                        double number = Double.parseDouble(singleWord);
+                        System.out.println("Found a number: " +
+                                lineCount + ": " + line);
+                    }
+                    catch (NumberFormatException ex)
+                    {
+                        //what do I do here?
+                    }
+
+                    if (singleWord.contains("Moby"))
+                    {
+                        aliceCounter++;
+                        aliceOnCurrentLine++;
+                    }
                 }
+
+                //print out the line if the line has more than one "Alice" in the line
+                if (aliceOnCurrentLine > 1)
+                {
+                    System.out.println("Multiple Alice's Found: " +
+                            lineCount + ": " + line);
+                }
+
+                /*if (line.contains("Alice"))
+                {
+                    System.out.println("Line #" + lineCount +
+                            " contains the word 'Alice'");
+                    aliceCounter++;
+                }*/
 
                 //System.out.println(lineCount + ": " + line);
             }
             System.out.println("Lines in file: " + lineCount);
+            System.out.println("Found the name 'Alice' " + aliceCounter + " times!");
         }
         catch (FileNotFoundException ex)
         {
